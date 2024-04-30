@@ -1,0 +1,255 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Landing Page</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0; /* Remove default margin */
+            background-image: url('4468755-wallpaper-hd-nature.jpg');
+            background-size: cover;
+        }
+
+        header {
+            width: 100%;
+            height: 100vh;
+            font-family: sans-serif;
+            padding: 20px;
+            text-align: left;
+            position: relative;
+        }
+
+        .description {
+            max-width: 650px;
+            position: absolute;
+            color: #FF7F50;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+        }
+
+        .description h1{
+            color: indianred;
+            font-size:3em;
+        }
+
+        description_2 {
+           
+        }
+         .description a{
+             text-decoration:none;
+             background:indianred;
+             color:white;
+             padding:10px 20px;
+             letter-spacing:5px;
+         }
+
+      nav{
+          display:flex;
+          justify-content:space-around;
+          align-items: flex-end;
+      }
+
+        .logo {
+            font-size: 2em; 
+            letter-spacing:2px;
+            font-family: sans-serif;
+        }
+
+        .menu a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 20px;
+            font-size:20px;
+            position:relative;
+        }
+        .menu a:before{
+            content: ' ';
+            position: absolute;
+            top:0;
+            left:0;
+            width:0;
+            height:100%;
+            border-bottom:2px solid indianred;
+            transition:0.2s linear;
+        }
+
+        .menu a:hover:before{
+            width:100%;
+        }
+
+
+        .glow-on-hover {
+            width: 220px;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+        }
+
+            .glow-on-hover:before {
+                content: '';
+                background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+                position: absolute;
+                top: -2px;
+                left: -2px;
+                background-size: 400%;
+                z-index: -1;
+                filter: blur(5px);
+                width: calc(100% + 4px);
+                height: calc(100% + 4px);
+                animation: glowing 20s linear infinite;
+                opacity: 0;
+                transition: opacity .3s ease-in-out;
+                border-radius: 10px;
+            }
+
+            .glow-on-hover:active {
+                color: #000
+            }
+
+                .glow-on-hover:active:after {
+                    background: transparent;
+                }
+
+            .glow-on-hover:hover:before {
+                opacity: 1;
+            }
+
+            .glow-on-hover:after {
+                z-index: -1;
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #111;
+                left: 0;
+                top: 0;
+                border-radius: 10px;
+            }
+
+        .about {
+            max-width: 100%;
+            position: absolute;
+            color: white;
+            top: 80%;
+            margin-left: 480px;
+            transform: translate(-50%,-50%);
+            justify-content: left;
+            background-size: cover;
+            
+        }
+            .about h2 {
+                width: 100%;
+                font-size: 2em;
+                
+            }
+
+            .about p {
+                width: 80%;
+                font-size: 1em;
+                font-family: sans-serif;
+                text-decoration: none;
+                border: 2px solid white;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 25px;
+                position: relative;
+                transition: all 1s;
+                overflow: hidden;
+            }
+      
+
+            .about p::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: cyan;
+                transition: all 1s;
+                z-index: -1;
+                transform: translateX(-100%);
+            }
+
+            .about p:hover::before {
+                transform: translateX(0);
+            }
+
+                .about p:hover {
+                    color: black;
+                    border: 2px solid black;
+                }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                Horizon
+            </div>
+            <div class="menu">
+                <a href="#">Home</a>
+                <a href="#">Destinations</a>
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+            </div>
+            <div class="glow-on-hover">
+                <button id="Registerbtn" class="glow-on-hover" <a href="student_login.html">Register</a></button>
+
+            </div>
+        </nav>
+        <section class="description">
+
+            <h1>Horizon International Flights</h1>
+
+            <br>
+
+            <a href="#">Book Your Flights</a>
+
+        </section>
+
+        <div class="about">
+
+            <h2>About</h2>
+
+            <br>
+
+            <p>
+                Horizon International Flights is a premier airline dedicated to providing exceptional travel experiences worldwide. With a commitment to safety, comfort, and reliability, we strive to exceed the expectations of every passenger. Whether you're embarking on a business trip or a leisurely getaway, our extensive network of routes and world-class service ensures a seamless journey from takeoff to landing. Discover the difference with Horizon International Flights and elevate your travel experience to new heights.
+            </p>
+            
+        </div>
+
+
+        <script>
+            // Get the button element
+            var registerButton = document.getElementById('Registerbtn');
+
+            // Add event listener for click event
+            registerButton.addEventListener('click', function () {
+                // Redirect to student_login.html page
+                window.location.href = 'student_login.html';
+            });
+        </script>
+
+
+
+    </header>
+    </body>
+</html>
+    
